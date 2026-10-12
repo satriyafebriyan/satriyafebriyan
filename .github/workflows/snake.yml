@@ -11,30 +11,30 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      # 1. Generate Animasi Ular (Snake)
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Generate Snake SVG
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/snake.svg
-            dist/snake-dark.svg?palette=github-dark
+            snake.svg
+            snake-dark.svg?palette=github-dark
 
-      # 2. Generate Animasi Pac-Man
       - name: Generate Pacman SVG
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           snake_type: 'pacman'
           outputs: |
-            dist/pacman.svg
-            dist/pacman-dark.svg?palette=github-dark
+            pacman.svg
+            pacman-dark.svg?palette=github-dark
 
-      # 3. Kirim hasilnya ke branch output
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
-          build_dir: dist
+          build_dir: .
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
