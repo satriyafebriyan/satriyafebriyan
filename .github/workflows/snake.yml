@@ -1,10 +1,8 @@
-name: Generate Snake Animation
+name: Generate Snake and Pacman Animation
 
 on:
-  # Jalankan otomatis setiap 24 jam sekali
   schedule:
     - cron: "0 0 * * *"
-  # Memungkinkan untuk dijalankan secara manual dari tab Actions
   workflow_dispatch:
 
 jobs:
@@ -13,15 +11,27 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Generate github-contribution-grid-snake.svg
+      # 1. Generate Animasi Ular (Snake)
+      - name: Generate Snake SVG
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/snake.svg
+            dist/snake-dark.svg?palette=github-dark
 
-      - name: Push github-contribution-grid-snake.svg to the output branch
+      # 2. Generate Animasi Pac-Man
+      - name: Generate Pacman SVG
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          snake_type: 'pacman'
+          outputs: |
+            dist/pacman.svg
+            dist/pacman-dark.svg?palette=github-dark
+
+      # 3. Kirim hasilnya ke branch output
+      - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
