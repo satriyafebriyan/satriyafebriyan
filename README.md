@@ -46,27 +46,18 @@
   </a>
 </p>
 
-### 🎮 GitHub Contribution Animations
-
-<p align="center">
-  <!-- Animasi Ular -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/satriyafebriyan/satriyafebriyan/output/snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/satriyafebriyan/satriyafebriyan/output/snake.svg">
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/satriyafebriyan/satriyafebriyan/output/snake.svg">
-  </picture>
-</p>
+---
 
 ### 🎮 GitHub Contribution Animations
 
 <p align="center">
-  <!-- Animasi Ular -->
-  <img src="https://raw.githubusercontent.com/satriyafebriyan/satriyafebriyan/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
+  <!-- Animasi Ular (Menggunakan Platane Web Renderer Langsung) -->
+  <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
 </p>
 
 <p align="center">
-  <!-- Animasi Pac-Man -->
-  <img src="https://raw.githubusercontent.com/satriyafebriyan/satriyafebriyan/output/pacman.svg" alt="Pacman Animation" />
+  <!-- Animasi Pac-Man / Alternatif -->
+  <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake-dark.svg" alt="Snake Dark Animation" />
 </p>
 
 <h3 align="center">Terimakasih dan #janganlupatitikkoma!</h3>
